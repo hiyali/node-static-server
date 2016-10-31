@@ -1,18 +1,18 @@
 /* v1.6
  v1.6 - elalashturuldi, aptomatik lan ip (host) (优化log与自动获取本地IP-无需手动输入了)
  v1.5 - eniq(qizil) korunidighan isimlar (自定义红色文本)
- v1.4 - IP tosush qoshuldi (加入禁止IP列表) 
- v1.3 - elalashturuldi (优化) 
- v1.2 - ereb-xenzu hojjet-qisquch namini qollaydu (支持阿拉伯文、中文 路径、文件名) 
+ v1.4 - IP tosush qoshuldi (加入禁止IP列表)
+ v1.3 - elalashturuldi (优化)
+ v1.2 - ereb-xenzu hojjet-qisquch namini qollaydu (支持阿拉伯文、中文 路径、文件名)
  v1.1 - bala hojjetqisquch qoshqili bolidu (支持子目录)
- 
+
 Salam addi mulazimiti - 本地监听端口服务
 author: salam
 email: Salam.14@163.com
 2014.8.11 created , at otkurbiz company in urumchi.
 */
 
-/* 
+/*
 
 * ishlitish - 使用方式
 
@@ -21,7 +21,7 @@ node listen.js
 Mulazimet qozghanlghandin keyin LAN ichide bu adresni ziyaret qilalaysiz
  - 服务启动后，可以直接在LAN内访问该地址了。
 
-* muhit - 环境 
+* muhit - 环境
 NodeJS
 urlencode (NodeJS Module)
 
@@ -90,10 +90,10 @@ http.createServer(function(req, res) {
 
 	if (pathname.charAt(pathname.length - 1) == "/" || path.extname(pathname) <= 0) { //hojjet qisquch
 		/*
-		fs.mkdir(路径,权限mode/777,回调函数);    
-		fs.rmdir(路径,回调函数);    
+		fs.mkdir(路径,权限mode/777,回调函数);
+		fs.rmdir(路径,回调函数);
 		fs.readdir(路径,回调函数(err,fileNameArray));
-		fs.stat(文件路径,回调函数(err,fs.Stats对象)); 
+		fs.stat(文件路径,回调函数(err,fs.Stats对象));
 		/**/
 
 		fs.readdir(__dirname + addYour + pathname, function(err, fileNameArray) {
@@ -261,13 +261,13 @@ function getLocalIP() {
 /*function getAll(obj){  //全部遍历
 //无线网络连接 5    -    1     -   address  (family = IPv4)
 var props = "";
-for ( var p in obj ){ // 方法 
+for ( var p in obj ){ // 方法
 if ( typeof ( obj [ p ]) == "object" ){  //function
-props += obj [ p ] + "("+p+")" + "= [ " +getAll( obj [ p ] ) + " ] \n";//obj [ p ]() ; 
-} else { // p 为属性名称，obj[p]为对应属性的值 
-props += p + " = " + obj [ p ] + " \t " ; 
-} 
-} // 最后显示所有的属性 
+props += obj [ p ] + "("+p+")" + "= [ " +getAll( obj [ p ] ) + " ] \n";//obj [ p ]() ;
+} else { // p 为属性名称，obj[p]为对应属性的值
+props += p + " = " + obj [ p ] + " \t " ;
+}
+} // 最后显示所有的属性
 return props;
 }//*/
 
@@ -288,9 +288,9 @@ function formatDate(formatStr, date) {
 			fTime.getSeconds().toString()
 		]
 		/*
-		var time1 = Date.parse(new Date()),  
-		time2 = (new Date()).valueOf(),  
-		time3 = new Date().getTime(); 
+		var time1 = Date.parse(new Date()),
+		time2 = (new Date()).valueOf(),
+		time3 = new Date().getTime();
 		*/
 
 	for (var i = 0; i < formatArr.length; i++) {
